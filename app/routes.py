@@ -1,7 +1,6 @@
 from flask_assets import Environment, Bundle
-from flask import render_template, Response, redirect, url_for, request, abort, flash, g
-import os.path, sys, sqlite3, socket, struct, re
-from pprint import pprint
+from flask import render_template, redirect, url_for, request, flash, g
+import os.path, sqlite3, socket, struct, re
 from app import app
 
 def getDatabase():
