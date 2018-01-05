@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block header %}Wpisz się do księgi {% endblock %}
+{% block content %}
+    <!-- Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <form name="sentMessage" id="bookForm" novalidate="novalidate" action="/" method="POST">
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Imię</label>
+                  <input value="{{ data['name'] }}" class="form-control" id="name" name="name" type="text" placeholder="Imię" required="required" data-validation-required-message="Musisz podać imię." maxlength="30">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Adres e-mail</label>
+                  <input value="{{ data['email'] }}" class="form-control" id="email" name="email" type="email" placeholder="Adres e-mail" required="required" data-validation-required-message="Musisz podać adres e-mail." data-validation-email-message="Nieprawidłowy adres e-mail." maxlength="255">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Nr telefonu</label>
+                  <input value="{{ data['phone'] }}" class="form-control" id="phone" name="phone" type="tel" placeholder="Nr telefonu" maxlength="25" >
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Wpis</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Treść wpisu..." required="required" data-validation-required-message="Musisz podać treść wiadomości.">{{ data['message'] }}</textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <br>
+              <div id="success"></div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Dodaj wpis</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

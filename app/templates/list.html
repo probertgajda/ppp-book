@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block header %}Lista wpisów{% endblock %}
+{% block content %}
+{% if bookEntries|length == 0 %}
+    <div class="alert alert-info" role="alert">Lista wpisów jest pusta</div>
+{% endif %}
+<div class="blog-comment">
+    <ul class="comments">
+    {% for entry in bookEntries %}
+        <li class="clearfix">
+          <img src="../static/img/user_1.jpg" class="avatar" alt="">
+          <div class="post-comments">
+              <p class="meta"><b>{{ entry[1] }}</b> napisał : <i class="pull-right"><small>{{ entry[5] }}</small></i></p>
+              <p class="meta">
+                  E-mail: <b>{{ entry[2] }}</b>{% if entry[3]|length %}<span class="pull-right">Telefon: <b>{{ entry[3] }}</b></span>{% endif %}
+              </p>
+              <p>{{ entry[4] }}</p>
+          </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}
