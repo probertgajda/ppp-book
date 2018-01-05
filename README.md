@@ -20,6 +20,6 @@ $ flask run
 
 - Robert Gajda
 
-- Anna sklarek
+- Anna Sklarek
 
 INF SSI II st., sem. 3, gr. ITS
