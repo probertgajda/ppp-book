@@ -89,12 +89,12 @@ def index():
                     ]
                     )
                 db.commit()
-                flash(u'Wpis został pomyślnie zapisany', 'success')
+                flash(u'Wpis dodany', 'success')
                 return redirect(url_for('list'))
             else:
-                flash(u'Wpis nie został dodany. Z tego IP dodano wpis mniej niż godzinę temu', 'danger')
+                flash(u'Nie dodano wpisu. Z tego IP niedawno dodano wpis', 'danger')
         else:
-            flash(u'Wpis nie został dodany. Popraw dane', 'danger')
+            flash(u'Nie dodano wpisu. Popraw dane', 'danger')
     return render_template('index.html', data=data)
 
 @app.route('/list')
